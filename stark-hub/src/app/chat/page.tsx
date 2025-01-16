@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Input from "./components/input"
+import { Buttons } from "./components/buttons"
 
 const page = () => {
   return (
@@ -24,7 +25,10 @@ const page = () => {
                 />
             </div>
         </div>
-        <Input />
+        <div className="mt-[26px]">
+            <Input />
+            <Buttons />
+        </div>
     </div>
   )
 }

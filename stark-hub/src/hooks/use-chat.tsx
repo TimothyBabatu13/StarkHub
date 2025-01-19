@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, use, useState } from "react";
+import { createContext, use } from "react";
 
 interface useChatType {
     children: React.ReactNode
@@ -19,7 +19,7 @@ const ChatContext = createContext<ChatContext>({
 }) 
 
 const UseChat = ({ children } : useChatType) => {
-    const [messageValue, setMessageValue] = useState('');
+    // const [messageValue, setMessageValue] = useState('');
   return (
     <ChatContext.Provider value={{
         messages: []

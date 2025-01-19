@@ -29,8 +29,8 @@ import {
   export function Buttons() {
     return (
       <Accordion type="single" collapsible className="grid grid-cols-2 gap-3">
-        <AccordionItem value="item-1" className="border-b-0 border-[0.5px]  border-[#000000] rounded-[6px]">
-          <AccordionTrigger className="hover:no-underline">
+        <AccordionItem value="item-1" className="border-b-0 border-[0.5px] h-fit border-[#000000] rounded-[6px]">
+          <AccordionTrigger className="hover:no-underline h-[46px]">
             <Button text="Invest">
                 <InvestIcon />
             </Button>
@@ -41,8 +41,8 @@ import {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-2" className="border-b-0 border-[0.5px]  border-[#000000] rounded-[6px]">
-          <AccordionTrigger className="hover:no-underline">
+        <AccordionItem value="item-2" className="border-b-0 border-[0.5px] h-fit  border-[#000000] rounded-[6px]">
+          <AccordionTrigger className="hover:no-underline h-[46px]">
           <Button text="Prompt">
                 <PromptIcon />
             </Button>
@@ -53,8 +53,8 @@ import {
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3" className="border-b-0 border-[0.5px]  border-[#000000] rounded-[6px]">
-          <AccordionTrigger className="hover:no-underline">
+        <AccordionItem value="item-3" className="border-b-0 border-[0.5px] h-fit border-[#000000] rounded-[6px]">
+          <AccordionTrigger className="hover:no-underline h-[46px]">
             <Button text="Mint">
                 <MintIcon />
             </Button>
@@ -63,8 +63,8 @@ import {
             <p className="pl-[18.91px]">Yes. It&apos;s animated by default, but you can disable it if you prefer. ,</p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-4" className="border-b-0 border-[0.5px]  border-[#000000] rounded-[6px]">
-          <AccordionTrigger className="hover:no-underline">
+        <AccordionItem value="item-4" className="border-b-0 border-[0.5px] h-fit border-[#000000] rounded-[6px]">
+          <AccordionTrigger className="hover:no-underline h-[46px]">
             <Button text="Manage">
                 <ManageIcon />
             </Button>
@@ -75,8 +75,8 @@ import {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-5" className="border-b-0 border-[0.5px]  border-[#000000] rounded-[6px]">
-          <AccordionTrigger className="hover:no-underline">
+        <AccordionItem value="item-5" style={{gridColumn: '1/-1'}} className="border-b-0 place-self-center min-w-[161px] border-[0.5px] h-fit border-[#000000] rounded-[6px]">
+          <AccordionTrigger className="hover:no-underline h-[46px]">
             <Button text="Swap">
                 <SwapIcon />
             </Button>

@@ -2,7 +2,7 @@
 import { useChatContext } from "@/hooks/use-chat";
 import NoMessage from "./components/no-message"
 
-const page = () => {
+const Page = () => {
     const data = useChatContext();
     // console.log(data?.messages.length)
   return (
@@ -14,4 +14,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

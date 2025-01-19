@@ -7,7 +7,7 @@ interface useChatType {
 }
 
 interface messageType {
-
+    message?: string
 }
 
 interface ChatContext {

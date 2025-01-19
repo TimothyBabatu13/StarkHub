@@ -3,12 +3,12 @@ import { useChatContext } from "@/hooks/use-chat";
 import NoMessage from "./components/no-message"
 
 const Page = () => {
-    const data = useChatContext();
-    // console.log(data?.messages.length)
+    const { messages } = useChatContext();
+    
   return (
     <div className="max-w-[90%] mx-auto py-5">
         {
-            data?.messages.length! < 1 ? <NoMessage /> : <div>Messages is coming</div>        
+            messages.length < 1 ? <NoMessage /> : <div>Messages is coming</div>        
         }
     </div>
   )

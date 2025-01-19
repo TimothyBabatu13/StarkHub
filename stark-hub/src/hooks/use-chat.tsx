@@ -29,11 +29,8 @@ const UseChat = ({ children } : useChatType) => {
   )
 }
 
-export const useChatContext = () => {
+export const useChatContext = (): ChatContext => {
     const context = use(ChatContext);
-    if(!context){
-        return;
-    }
     return context
 }
 

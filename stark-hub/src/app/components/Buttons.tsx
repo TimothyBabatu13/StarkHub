@@ -1,4 +1,25 @@
 'use client';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 import {
     Dialog,
@@ -12,6 +33,8 @@ import {
   } from "@/components/ui/dialog"
 import Image from "next/image";
 import Link from "next/link";
+import { WalletIcon, WalletMoneyIcon } from "./icons";
+import { usePathname } from "next/navigation";
 
 
 export const ConnectButton = () => {
@@ -20,6 +43,100 @@ export const ConnectButton = () => {
 </button>
 }
 
+export const WalletConnectButton = () => {
+  const pathname = usePathname();
+  console.log(pathname)
+  const isConnected = pathname === '/chat';
+  return(
+    <>
+    {
+      isConnected ? (
+      <div className="flex items-center p-6 rounded-[32px] gap-3">
+        <HoverCard>
+          <HoverCardTrigger asChild>
+            <div className="flex cursor-pointer items-center gap-4 border border-[#0C0C4F] rounded-[4px] p-2">
+              <WalletMoneyIcon />
+              <span className="text-base font-bold">23.03 STRK</span>
+            </div>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            Your wallet balance is 23.03 STRK
+          </HoverCardContent>
+        </HoverCard>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button className="h-10 w-10 rounded-full">
+              <Image 
+                src={'/user.png'}
+                alt="user image"
+                height={40}
+                width={40}
+                draggable={false}
+              />
+          </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56 mr-8">
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                Profile
+                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Billing
+                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Settings
+                <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Keyboard shortcuts
+                <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>Email</DropdownMenuItem>
+                <DropdownMenuItem>Message</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>More...</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+          <DropdownMenuItem>
+            New Team
+            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>GitHub</DropdownMenuItem>
+        <DropdownMenuItem>Support</DropdownMenuItem>
+        <DropdownMenuItem disabled>API</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          Log out
+          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+    </div> ) : (
+      <button className="flex items-center bg-[#E3769E] p-6 rounded-[32px] gap-4">
+      <span className="text-base font-bold">CONNECT WALLET</span>
+      <WalletIcon />
+    </button>
+    )
+    }
+    
+    </>
+  )
+}
 
 const WalletBtn = ( { children, text, className } : {
     children: React.ReactNode,

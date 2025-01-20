@@ -70,3 +70,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@media screen and (max-width: 960px) {
+  header ul.ul{
+    display: none;
+  }
+}

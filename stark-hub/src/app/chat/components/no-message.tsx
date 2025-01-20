@@ -5,7 +5,7 @@ import { Buttons } from './buttons'
 
 const NoMessage = () => {
   return (
-    <div>
+    <div className='md:w-[50%] md:mx-auto'>
         <Image 
             src={'/logo.svg'}
             height={150}

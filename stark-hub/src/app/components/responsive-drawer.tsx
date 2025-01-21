@@ -1,6 +1,6 @@
 'use-client';
 import * as React from "react"
-
+import { connect } from "get-starknet"
 import { useMediaQuery } from "@/hooks/use-media-query"
 
 import {
@@ -81,13 +81,20 @@ function ProfileForm() {
         })
     }
 
+    const handleConnectWallet = () => {
+        connect()
+    }
+
   return (
     <div className="flex flex-col gap-3">
-        <button 
-            className="block w-full"
-        >
-            Connet Wallet
-        </button>
+        <DrawerClose asChild>
+            <button 
+                className="block w-full"
+                onClick={handleConnectWallet}
+            >
+                Connet Wallet
+            </button>
+        </DrawerClose>
         <button 
             className="block w-full"
             onClick={handleImportExistingWallet}

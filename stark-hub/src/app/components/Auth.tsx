@@ -15,7 +15,6 @@ const Auth = () => {
         <h2 className="text-[#0C0C4F] text-xl mt-[30px]">A unified hub for AI-driven DeFi
         innovation on Starknet.</h2>
        <div className="mt-[20px]">
-        {/* <SignUpButton /> */}
         <ConnectButton />
        </div>
     </div>

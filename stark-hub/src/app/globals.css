@@ -76,3 +76,27 @@ body {
     display: none;
   }
 }
+
+@media screen and (min-width: 491px) {
+  .balance {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  header a span.logo-name {
+    font-size: 0.8em !important;
+  }
+  header button.connect-button {
+    padding: 15px !important;
+  }
+  header button.connect-button span{
+    font-size: 0.7em !important;
+  }
+  header button.connect-button svg.wallet-icon {
+    display: none !important;
+  }
+  .hover-card {
+    display: none;
+  }
+}

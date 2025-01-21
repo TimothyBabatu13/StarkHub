@@ -33,7 +33,7 @@ const Header = () => {
                 width={30}
                 alt="logo"
             />
-            <span className="text-[#0C0C4F] text-2xl ml-2 font-bold">STARKHUB</span>
+            <span className="text-[#0C0C4F] logo-name text-2xl ml-2 font-bold">STARKHUB</span>
         </Link>
         <ul className="flex items-center gap-14 ul">
             {

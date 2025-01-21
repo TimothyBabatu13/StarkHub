@@ -89,7 +89,7 @@ export const SwapIcon = () => {
 
 export const WalletIcon = () => {
     return(
-    <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="wallet-icon" width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 8.5H8.01818L5.97273 6.45455L7.11818 5.30909L11.1273 9.31818L7.11818 13.3273L5.97273 12.1818L8.01818 10.1364H0V8.5ZM16.3636 0.318184H1.63636C0.736364 0.318184 0 1.05455 0 1.95455V6.94546H1.63636V3.59091H16.3636V15.0455H1.63636V11.7727H0V15.0455C0 15.9455 0.736364 16.6818 1.63636 16.6818H16.3636C17.2636 16.6818 18 15.9455 18 15.0455V1.95455C18 1.05455 17.2636 0.318184 16.3636 0.318184Z" fill="black"/>
     </svg>
 )

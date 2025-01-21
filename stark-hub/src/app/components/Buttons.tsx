@@ -11,12 +11,8 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -35,17 +31,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { WalletIcon, WalletMoneyIcon } from "./icons";
 import { usePathname } from "next/navigation";
+import { DrawerDialogDemo } from "./responsive-drawer";
 
 
 export const ConnectButton = () => {
-    return <button className="w-full h-[51px] rounded-xl text-[#E3769E] border-[#E3769E] border py-4 mt-[10px]">
-    <p className="text-base font-bold">Connect wallet</p>
-</button>
+    return<DrawerDialogDemo>
+      <button className="w-full h-[51px] rounded-xl text-[#E3769E] border-[#E3769E] border py-4 mt-[10px]">
+        <span className="text-base font-bold">Connect wallet</span>
+      </button>
+    </DrawerDialogDemo>
 }
 
 export const WalletConnectButton = () => {
   const pathname = usePathname();
-  console.log(pathname)
   const isConnected = pathname === '/chat';
   return(
     <>
@@ -54,7 +52,7 @@ export const WalletConnectButton = () => {
       <div className="flex items-center p-6 rounded-[32px] gap-3">
         <HoverCard>
           <HoverCardTrigger asChild>
-            <div className="flex cursor-pointer items-center gap-4 border border-[#0C0C4F] rounded-[4px] p-2">
+            <div className="flex cursor-pointer hover-card items-center gap-4 border border-[#0C0C4F] rounded-[4px] p-2">
               <WalletMoneyIcon />
               <span className="text-base font-bold">23.03 STRK</span>
             </div>
@@ -83,54 +81,25 @@ export const WalletConnectButton = () => {
                 Profile
                 <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                Billing
-                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                Settings
-                <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                Keyboard shortcuts
-                <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+              <DropdownMenuItem disabled className="balance">
+                Balance
+                <DropdownMenuShortcut>23.03 STRK</DropdownMenuShortcut>
               </DropdownMenuItem>
             </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>Team</DropdownMenuItem>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>Email</DropdownMenuItem>
-                <DropdownMenuItem>Message</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>More...</DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
-          <DropdownMenuItem>
-            New Team
-            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>GitHub</DropdownMenuItem>
-        <DropdownMenuItem>Support</DropdownMenuItem>
-        <DropdownMenuItem disabled>API</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          Log out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+            <DropdownMenuItem onClick={() => console.log('logged out')}>
+              Log out
+              <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+            </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div> ) : (
-      <button className="flex items-center bg-[#E3769E] p-6 rounded-[32px] gap-4">
-      <span className="text-base font-bold">CONNECT WALLET</span>
-      <WalletIcon />
-    </button>
+      <DrawerDialogDemo>
+        <button className="flex items-center bg-[#E3769E] connect-button p-6 rounded-[32px] gap-4">
+          <span className="text-base font-bold">CONNECT WALLET</span>
+          <WalletIcon />
+        </button>
+      </DrawerDialogDemo>
+      
     )
     }
     
